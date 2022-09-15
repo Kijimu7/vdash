@@ -231,7 +231,7 @@ namespace BNG {
         /// <summary>
         /// Pressed down this frame, but not last
         /// </summary>
-        public bool LeftThumbstickDown = false;
+        public bool XbuttonDown = false;
 
         /// <summary>
         /// Released this frame but not last
@@ -362,6 +362,8 @@ namespace BNG {
         public bool IsPicoDevice { get; private set; }
 
         public bool IsValveIndexController { get; private set; }
+        public bool LeftThumbstickDown { get; internal set; }
+        public bool Xbutton { get; internal set; }
 
         /// <summary>
         /// Returns true if the controller has both a Touchpad and a Joystick. Currently only the Valve Index has both.
@@ -640,7 +642,7 @@ namespace BNG {
 
             var prevBool = LeftThumbstick;
             LeftThumbstick = getFeatureUsage(primaryLeftController, thumbstickAxisClick);
-            LeftThumbstickDown = prevBool == false && LeftThumbstick == true;
+            XbuttonDown = prevBool == false && LeftThumbstick == true;
             LeftThumbstickUp = prevBool == true && LeftThumbstick == false;
 
             prevBool = RightThumbstick;
@@ -786,7 +788,7 @@ namespace BNG {
             LeftThumbstickAxis = leftThumbstick.ReadValue<Vector2>();
             var prevBool = LeftThumbstick;
             LeftThumbstick = correctValue(leftThumbstickDown.ReadValue<float>()) > 0;
-            LeftThumbstickDown = prevBool == false && LeftThumbstick == true;
+            XbuttonDown = prevBool == false && LeftThumbstick == true;
             LeftThumbstickUp = prevBool == true && LeftThumbstick == false;
             LeftThumbNear = correctValue(leftThumbNear.ReadValue<float>()) > 0;
             LeftTouchPadAxis = leftTouchpad.ReadValue<Vector2>();
@@ -1080,7 +1082,7 @@ namespace BNG {
             if (val == ControllerBinding.LeftGrip && LeftGrip > _downThreshold) { return true; }
             if (val == ControllerBinding.LeftGripDown && LeftGripDown) { return true; }
             if (val == ControllerBinding.LeftThumbstick && LeftThumbstick) { return true; }
-            if (val == ControllerBinding.LeftThumbstickDown && LeftThumbstickDown) { return true; }
+            if (val == ControllerBinding.LeftThumbstickDown && XbuttonDown) { return true; }
             if (val == ControllerBinding.RightTrigger && RightTrigger > _downThreshold) { return true; }
             if (val == ControllerBinding.RightTriggerDown && RightTriggerDown) { return true; }
             if (val == ControllerBinding.RightGrip && RightGrip > _downThreshold) { return true; }

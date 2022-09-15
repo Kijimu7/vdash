@@ -1,16 +1,87 @@
+using BNG;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
+
 
 public class CharController : MonoBehaviour
 {
+    bool alive = true;//player alive boolean
     public SpawnManager spawnManager;
+    private Vector3 direction;
+    public float forwardSpeed;
+    private CharacterController cc;
+    private int desireLane = 1;
+    public float laneDistance;
+    
 
-    private void OnTriggerEnter(Collider other)
+    private void Awake()
     {
-        if (other.gameObject.CompareTag("SpawnTrigger")) {
-        spawnManager.SpawnTriggerEnter();
-        Debug.Log("Trigger Entered");
-        }
+        cc = GetComponent<CharacterController>();
+
     }
+
+    void Update()
+    {
+        
+            direction.z = forwardSpeed; //set to move z direction
+            cc.Move(direction * Time.deltaTime); //Move to z direction where specific amount input from forwardSpeed
+
+        if (!alive) return;
+
+
+        
+     /*   if (InputBridge.Instance.XButtonDown)
+        {
+            transform.position = transform.position - new Vector3(3, 0, 0);
+            Debug.Log("Thumb pressed");
+
+            desireLane++;
+            if (desireLane == 3)
+                desireLane = 2;
+        }
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            desireLane--;
+            if (desireLane == -1)
+                desireLane = 0;
+        }
+
+        Vector3 targetPosition = transform.position.z * transform.forward + transform.position.y * transform.up;
+
+        if (desireLane == 0)
+        {
+            targetPosition += Vector3.left * laneDistance;
+        }
+        else
+            if (desireLane == 2)
+        {
+            targetPosition = targetPosition += Vector3.right * laneDistance;
+        }
+
+        {
+            transform.position = targetPosition;
+        }
+*/
+
+    }
+
+    public void Die()
+    {
+        alive = false;
+        //Restart the game
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+    }
+    private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.CompareTag("SpawnTrigger")) {
+                spawnManager.SpawnTriggerEnter();
+                Debug.Log("Trigger Entered");
+            }
+}
+    
 }
