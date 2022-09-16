@@ -12,15 +12,24 @@ public class Obstacle : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
+    /*    private void OnTriggerEnter(Collider other)
         {
+            if (other.gameObject.CompareTag("Player"))
+            {
+
+                charController.Die();
+            }
+            //Kill the player
+        }*/
+
+    private void OnCollistionEnter(Collision collison)
+    {
+        if (collison.gameObject.CompareTag("Player")) { 
+            Debug.Log("work");
             charController.Die();
         }
+
         //Kill the player
     }
-
-
 
 }

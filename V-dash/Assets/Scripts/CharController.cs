@@ -16,7 +16,9 @@ public class CharController : MonoBehaviour
     private CharacterController cc;
     private int desireLane = 1;
     public float laneDistance;
-    
+    public GameObject gameObjectToActivate;
+    UImenuInGame uImenuInGame;
+
 
     private void Awake()
     {
@@ -26,62 +28,76 @@ public class CharController : MonoBehaviour
 
     void Update()
     {
-        
-            direction.z = forwardSpeed; //set to move z direction
-            cc.Move(direction * Time.deltaTime); //Move to z direction where specific amount input from forwardSpeed
+
+        direction.z = forwardSpeed; //set to move z direction
+        cc.Move(direction * Time.deltaTime); //Move to z direction where specific amount input from forwardSpeed
 
         if (!alive) return;
 
 
-        
-     /*   if (InputBridge.Instance.XButtonDown)
-        {
-            transform.position = transform.position - new Vector3(3, 0, 0);
-            Debug.Log("Thumb pressed");
 
-            desireLane++;
-            if (desireLane == 3)
-                desireLane = 2;
-        }
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            desireLane--;
-            if (desireLane == -1)
-                desireLane = 0;
-        }
+        /*   if (InputBridge.Instance.XButtonDown)
+           {
+               transform.position = transform.position - new Vector3(3, 0, 0);
+               Debug.Log("Thumb pressed");
 
-        Vector3 targetPosition = transform.position.z * transform.forward + transform.position.y * transform.up;
+               desireLane++;
+               if (desireLane == 3)
+                   desireLane = 2;
+           }
+           if (Input.GetKeyDown(KeyCode.D))
+           {
+               desireLane--;
+               if (desireLane == -1)
+                   desireLane = 0;
+           }
 
-        if (desireLane == 0)
-        {
-            targetPosition += Vector3.left * laneDistance;
-        }
-        else
-            if (desireLane == 2)
-        {
-            targetPosition = targetPosition += Vector3.right * laneDistance;
-        }
+           Vector3 targetPosition = transform.position.z * transform.forward + transform.position.y * transform.up;
 
-        {
-            transform.position = targetPosition;
-        }
-*/
+           if (desireLane == 0)
+           {
+               targetPosition += Vector3.left * laneDistance;
+           }
+           else
+               if (desireLane == 2)
+           {
+               targetPosition = targetPosition += Vector3.right * laneDistance;
+           }
+
+           {
+               transform.position = targetPosition;
+           }
+   */
 
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            Die();
+        }
+    }
     public void Die()
     {
+        gameObjectToActivate.SetActive(true);
         alive = false;
+        Application.Quit();
+        Debug.Log("collide");
+
         //Restart the game
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
     }
     private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("SpawnTrigger"))
         {
-            if (other.gameObject.CompareTag("SpawnTrigger")) {
-                spawnManager.SpawnTriggerEnter();
-                Debug.Log("Trigger Entered");
-            }
-}
-    
+            spawnManager.SpawnTriggerEnter();
+
+        }
+    }
+
+
+
 }

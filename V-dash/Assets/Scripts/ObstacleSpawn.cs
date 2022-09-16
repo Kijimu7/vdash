@@ -14,7 +14,6 @@ public class ObstacleSpawn : MonoBehaviour
 
     void SpawnObstacle()
     {
-        Debug.Log("obstacle");
         // Choose a random point to spawn the obstacle
         int obstacleSpawnIndex = Random.Range(2, 5);
         Transform spawnPoint = transform.GetChild(obstacleSpawnIndex).transform; // get ObstacleSpawn left, middle right component transform
