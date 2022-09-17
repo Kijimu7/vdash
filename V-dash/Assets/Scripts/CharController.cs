@@ -18,6 +18,8 @@ public class CharController : MonoBehaviour
     public float laneDistance;
     public GameObject gameObjectToActivate;
     UImenuInGame uImenuInGame;
+    private float spawnDistance = 2;
+    public Transform head;
 
 
     private void Awake()
@@ -28,7 +30,7 @@ public class CharController : MonoBehaviour
 
     void Update()
     {
-
+        
         direction.z = forwardSpeed; //set to move z direction
         cc.Move(direction * Time.deltaTime); //Move to z direction where specific amount input from forwardSpeed
 
@@ -81,9 +83,10 @@ public class CharController : MonoBehaviour
     public void Die()
     {
         gameObjectToActivate.SetActive(true);
+        gameObjectToActivate.transform.position = head.position + new Vector3(head.forward.x, 0, head.forward.z).normalized * spawnDistance;
         alive = false;
-        Application.Quit();
         Debug.Log("collide");
+
 
         //Restart the game
         //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -98,6 +101,5 @@ public class CharController : MonoBehaviour
         }
     }
 
-
-
+     
 }
