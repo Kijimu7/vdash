@@ -12,13 +12,13 @@ public class CharController : MonoBehaviour
     bool alive = true;//player alive boolean
     public SpawnManager spawnManager;
     private Vector3 direction;
-    private float forwardSpeed = 0f;
+    private float forwardSpeed = 3f;
     CharacterController cc;
     private int desireLane = 1;
     public float laneDistance;
     public GameObject gameObjectToActivate;
     UImenuInGame uImenuInGame;
-    private float spawnDistance = 1f;
+    private float spawnDistance = 1.5f;
     public Transform head;
 
 
@@ -30,10 +30,11 @@ public class CharController : MonoBehaviour
 
     void Update()
     {
-        
-        direction.z = forwardSpeed; //set to move z direction
+        if (cc.enabled == true) { 
+            direction.z = forwardSpeed; //set to move z direction
         cc.Move(direction * Time.deltaTime); //Move to z direction where specific amount input from forwardSpeed
-       
+        }
+
 
         if (!alive) return;
 
@@ -90,10 +91,10 @@ public class CharController : MonoBehaviour
     public void Die()
     {
         gameObjectToActivate.SetActive(true);
-        gameObjectToActivate.transform.position = head.position + new Vector3(head.forward.x, 0, head.forward.z).normalized * spawnDistance;
+        gameObjectToActivate.transform.position = head.position + new Vector3(head.forward.x, 0.3f, head.forward.z).normalized * spawnDistance;
         alive = false;
         Debug.Log("collide");
-        //cc.enabled = false;         
+        cc.enabled = false;         
 
        
 
