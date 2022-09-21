@@ -12,7 +12,7 @@ public class CharController : MonoBehaviour
     bool alive = true;//player alive boolean
     public SpawnManager spawnManager;
     private Vector3 direction;
-    private float forwardSpeed = 3f;
+    private float forwardSpeed = 5f;
     CharacterController cc;
     private int desireLane = 1;
     public float laneDistance;
