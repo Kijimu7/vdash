@@ -12,7 +12,7 @@ public class CharController : MonoBehaviour
     bool alive = true;//player alive boolean
     public SpawnManager spawnManager;
     private Vector3 direction;
-    private float forwardSpeed = 5f;
+    private float forwardSpeed = 7f;
     CharacterController cc;
     private int desireLane = 1;
     public float laneDistance;
@@ -79,6 +79,7 @@ public class CharController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Obstacle"))
         {
+            Debug.Log("testtesttest");
             Die();
         }
     }
@@ -94,9 +95,7 @@ public class CharController : MonoBehaviour
         gameObjectToActivate.transform.position = head.position + new Vector3(head.forward.x, 0.3f, head.forward.z).normalized * spawnDistance;
         alive = false;
         Debug.Log("collide");
-        cc.enabled = false;         
-
-       
+        cc.enabled = false;             
 
     }
     private void OnTriggerEnter(Collider other)
@@ -107,6 +106,5 @@ public class CharController : MonoBehaviour
 
         }
     }
-
-     
+  
 }

@@ -163,7 +163,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1263759730368568494}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3958632757404751730}
@@ -1944,7 +1944,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2857214820186803251}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.48, y: 1.5, z: 0.87}
+  m_LocalPosition: {x: -2.48, y: 0.5, z: 0.87}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3958632757404751730}
@@ -1960,6 +1960,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3958632757404751730}
   - component: {fileID: 7766595610324478134}
+  - component: {fileID: 5499412282979732534}
   m_Layer: 0
   m_Name: cakestreet
   m_TagString: Untagged
@@ -1997,8 +1998,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ab593d59da17314eb9bd6a01b206d7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstaclePrefab: {fileID: 7947868414532502076, guid: 98580e3938c7a2940840ecc39c996c57,
+  obstaclePrefabs:
+  - {fileID: 1752049793359139079, guid: 9cbb2875f671c804891246d1bab60438, type: 3}
+  - {fileID: 9059063753107585439, guid: c9c04c36e11736446b8a747958e0bc8e, type: 3}
+  - {fileID: 7780665458014318179, guid: 224bd284bf094594c9606cf067a10e4b, type: 3}
+  coinPrefab: {fileID: 2648481568358224342, guid: 5d777c59010662242a159a2d231854c9,
     type: 3}
+--- !u!65 &5499412282979732534
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4441731381531610568}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 7.055812, z: 20}
+  m_Center: {x: 0, y: -1.472094, z: 0}
 --- !u!1 &4623500031256098065
 GameObject:
   m_ObjectHideFlags: 0
@@ -2241,7 +2259,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8327085673928839919}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.79, y: 1.5, z: -6.41}
+  m_LocalPosition: {x: 1.79, y: 0.5, z: -6.41}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3958632757404751730}
