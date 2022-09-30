@@ -2135,8 +2135,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPosition: {fileID: 1256601014}
-  enemyPrefab: {fileID: 865640236360988016, guid: 3e3014e1ff8d5ee42b4465ef83df5706,
-    type: 3}
 --- !u!114 &1256601016
 MonoBehaviour:
   m_ObjectHideFlags: 0

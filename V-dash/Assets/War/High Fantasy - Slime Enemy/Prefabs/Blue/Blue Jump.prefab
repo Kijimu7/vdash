@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 865640236360988021}
   - component: {fileID: 865640236360988022}
   - component: {fileID: 865640236360988023}
+  - component: {fileID: 5638143051516613504}
   m_Layer: 0
   m_Name: Blue Jump
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 865640236360988016}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.059, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -72,7 +73,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 5704156884885693787, guid: f617990383515fb4cbd1d986504bdd76, type: 3}
+  m_Sprite: {fileID: 5704156884885693787, guid: f617990383515fb4cbd1d986504bdd76,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -102,3 +104,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5638143051516613504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 865640236360988016}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d09489c46c121947a1968d7b9889d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -20,31 +20,38 @@ public class ObjectPool : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-   
-        for(int i = 0; i< amountToPool; i++)
+        //InvokeRepeating("EnableObject",2,1);
+       
+
+        for (int i = 0; i< amountToPool; i++)
         {
             GameObject obj = Instantiate(bulletPrefab);
             obj.SetActive(false);
             pooledObjects.Add(obj);
         }
+        instance = this;
     }
    
+  
     public GameObject GetPooledObject()
     {
         for(int i = 0; i < pooledObjects.Count; i++)
         {
             if (!pooledObjects[i].activeInHierarchy)
             {
+               
                 return pooledObjects[i];
             }
         }
         return null;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        InvokeRepeating("GetPooledObject", 3f, 3f);
 
-    }
+
+    /*void EnableObject()
+    {
+        GetPooledObject().SetActive(true);
+    }*/
+    // Update is called once per frame
+
 }

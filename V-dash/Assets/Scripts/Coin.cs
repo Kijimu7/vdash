@@ -11,7 +11,6 @@ public class Coin : MonoBehaviour
         //Check that the object we collided with is the player
         if (!other.gameObject.CompareTag("Player"))
         {
-          
             return;
         }
 
