@@ -25,7 +25,6 @@ public class Obstacle : MonoBehaviour
     private void OnCollistionEnter(Collision collison)
     {
         if (collison.gameObject.CompareTag("Player")) { 
-            Debug.Log("work");
             charController.Die();
         }
 

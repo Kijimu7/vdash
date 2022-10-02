@@ -79,7 +79,6 @@ public class CharController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Obstacle"))
         {
-            Debug.Log("testtesttest");
             Die();
         }
     }
@@ -94,7 +93,6 @@ public class CharController : MonoBehaviour
         gameObjectToActivate.SetActive(true);
         gameObjectToActivate.transform.position = head.position + new Vector3(head.forward.x, 0.3f, head.forward.z).normalized * spawnDistance;
         alive = false;
-        Debug.Log("collide");
         cc.enabled = false;             
 
     }

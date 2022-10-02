@@ -4,21 +4,11 @@ using UnityEngine;
 
 public class enemy : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+   
+   
     private void OnBecameInvisible()
     {
         gameObject.SetActive(false);
-        Debug.Log("became invisible");
+      
     }
 }

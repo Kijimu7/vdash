@@ -12,17 +12,11 @@ public class EnemySpawnManager : MonoBehaviour
     float z;
     Vector3 pos;
 
-    private void Start()
-    {
-       
-    }
-
     IEnumerator ExampleCoroutine()
     {
 
         while (true)
         {
-
 
             {
 
@@ -32,15 +26,15 @@ public class EnemySpawnManager : MonoBehaviour
                 if (enemy != null)
                 {
                     //enemy.transform.position = enemyPosition.position;
-                    x = Random.Range(-1, 5);
+                    x = Random.Range(-3, 3);
                     y = 2;
-                    z = 30;
+                    z = Random.Range(40, 200);
                     pos = new Vector3(x, y, z);
                     enemy.transform.position = pos;
                     //enemy.transform.position = enemyPosition.forward * 30;
                     enemy.SetActive(true);
                 }
-                Debug.Log("player enter");
+                
 
             }
         }
@@ -58,10 +52,6 @@ public class EnemySpawnManager : MonoBehaviour
         }
 
         
-
-
     }
-
-
 
 }
