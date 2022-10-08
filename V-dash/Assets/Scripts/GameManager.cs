@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     public void IncrementScore()
     {
         score++;
-        scoreText.text = score.ToString();
+        scoreText.text = "x " + score.ToString();
     }
 
     private void Awake()

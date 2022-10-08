@@ -1,0 +1,11 @@
+Model Information:
+* title:	Custom Sketchfab Project
+* source:	https://sketchfab.com/3d-models/custom-sketchfab-project-5b3b1da62a3f405eb45b017caf763713
+* author:	Bailey Medlin (https://sketchfab.com/blymed)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Custom Sketchfab Project" (https://sketchfab.com/3d-models/custom-sketchfab-project-5b3b1da62a3f405eb45b017caf763713) by Bailey Medlin (https://sketchfab.com/blymed) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
