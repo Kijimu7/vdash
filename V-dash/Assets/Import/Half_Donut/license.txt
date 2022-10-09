@@ -1,0 +1,11 @@
+Model Information:
+* title:	Half_Donut
+* source:	https://sketchfab.com/3d-models/half-donut-ad06d1f560ce4246bafc1c204efb2a33
+* author:	Nikuza (https://sketchfab.com/Nikuza)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Half_Donut" (https://sketchfab.com/3d-models/half-donut-ad06d1f560ce4246bafc1c204efb2a33) by Nikuza (https://sketchfab.com/Nikuza) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
