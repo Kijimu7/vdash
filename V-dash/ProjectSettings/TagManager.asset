@@ -8,6 +8,7 @@ TagManager:
   - Obstacle
   - CC
   - EnemySpawn
+  - Coin
   layers:
   - Default
   - TransparentFX

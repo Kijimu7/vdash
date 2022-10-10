@@ -17,7 +17,7 @@ public class ObjectsSpawn : MonoBehaviour
         SpawnObstacle();
         obstaclePrefabs = new List<GameObject>();
 
-        SpawnCoins();
+        
         StartCoroutine(SpawnCoins());
         
     }

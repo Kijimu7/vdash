@@ -9,11 +9,14 @@ public class Coin : MonoBehaviour
     public AudioClip coinSound;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Obstacle"))
+        if (other.gameObject.CompareTag("Coin"))
         {
             Destroy(this.gameObject);
            
-            Debug.Log("Colliding");
+        }
+        if (other.gameObject.CompareTag("Obstacle"))
+        {
+            Destroy(this.gameObject);
 
         }
         //Check that the object we collided with is the player
