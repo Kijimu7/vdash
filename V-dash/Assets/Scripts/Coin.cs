@@ -9,19 +9,30 @@ public class Coin : MonoBehaviour
     public AudioClip coinSound;
     private void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.CompareTag("Obstacle"))
+        {
+            Destroy(this.gameObject);
+           
+            Debug.Log("Colliding");
+
+        }
         //Check that the object we collided with is the player
         if (!other.gameObject.CompareTag("Player"))
         {
             return;
         }
 
+        
         // Add to the player's score
         GameManager.inst.IncrementScore();
 
         AudioSource.PlayClipAtPoint(coinSound, transform.position, 0.5f);
         // Desroy this coin object
         Destroy(this.gameObject);
+
+    
     }
+
 
     // Update is called once per frame
     void Update()

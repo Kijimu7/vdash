@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6366124286339106690}
   - component: {fileID: -5386601738889614319}
   m_Layer: 0
-  m_Name: candyBar
+  m_Name: ChocoBar
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
