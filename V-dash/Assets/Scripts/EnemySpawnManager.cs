@@ -28,7 +28,7 @@ public class EnemySpawnManager : MonoBehaviour
                     //enemy.transform.position = enemyPosition.position;
                     x = Random.Range(-3, 3);
                     y = 2;
-                    z = Random.Range(40, 200);
+                    z = Random.Range(300, 400);
                     pos = new Vector3(x, y, z);
                     enemy.transform.position = pos;
                     //enemy.transform.position = enemyPosition.forward * 30;

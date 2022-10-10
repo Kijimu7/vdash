@@ -7,9 +7,10 @@ public class ObjectsSpawn : MonoBehaviour
     //public GameObject obstaclePrefab;
     public List<GameObject> obstaclePrefabs;
     [SerializeField] GameObject coinPrefab;
+    //[SerializeField] GameObject donutPrefab;
     public Vector3 firstPostion;
     public float gap = 2;
-  
+    private Transform donut;
 
     private void Start()
     {
@@ -24,28 +25,26 @@ public class ObjectsSpawn : MonoBehaviour
 
     void SpawnObstacle()
     {
-        // Choose a random point to spawn the obstacle
-        int obstacleSpawnIndex = Random.Range(0, 3);
-        int donutSpawnIndex = 1;
-        Transform spawnPoint = transform.GetChild(obstacleSpawnIndex).transform;
-        Transform donutSpawnPoint = transform.GetChild(donutSpawnIndex).transform; // get ObstacleSpawn left, middle right component transform
+       
+             // Choose a random point to spawn the obstacle
+            int obstacleSpawnIndex = Random.Range(0, 3);
+            //int donutSpawnIndex = 19;
+            Transform spawnPoint = transform.GetChild(obstacleSpawnIndex).transform;// get ObstacleSpawn left, middle right component transform
+                                                                                    //Transform donutSpawnPoint = transform.GetChild(donutSpawnIndex).transform; 
 
-
-        //Spawn the obstacle at the postion
-
-        int n = Random.Range(0, 3); //obstacle objects
-        int a = 3;
-        Instantiate(obstaclePrefabs[n], spawnPoint.position, Quaternion.identity, transform);
-        Instantiate(obstaclePrefabs[a], donutSpawnPoint.position, Quaternion.identity, transform);
-        
+            //Spawn the obstacle at the postion
+            //donut = transform.FindChild("DonutMiddle");
+            int n = Random.Range(0, 3); //obstacle objects
+            Instantiate(obstaclePrefabs[n], spawnPoint.position, Quaternion.identity, transform);
+           // Instantiate(donutPrefab, donut.position, donut.transform.rotation);
+           // Debug.Log("donut " + donutPrefab);
+                   
     }
 
 
 
     IEnumerator SpawnCoins()
-    {
-       
-       
+    {      
         int coinToSpawn = 2;
         //Vector3 position = firstPostion;
         while (true) { 
