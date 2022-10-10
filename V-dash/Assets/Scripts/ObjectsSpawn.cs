@@ -26,13 +26,17 @@ public class ObjectsSpawn : MonoBehaviour
     {
         // Choose a random point to spawn the obstacle
         int obstacleSpawnIndex = Random.Range(0, 3);
-        Transform spawnPoint = transform.GetChild(obstacleSpawnIndex).transform; // get ObstacleSpawn left, middle right component transform
+        int donutSpawnIndex = 1;
+        Transform spawnPoint = transform.GetChild(obstacleSpawnIndex).transform;
+        Transform donutSpawnPoint = transform.GetChild(donutSpawnIndex).transform; // get ObstacleSpawn left, middle right component transform
 
 
         //Spawn the obstacle at the postion
 
-        int n = Random.Range(0, 4); //obstacle objects
+        int n = Random.Range(0, 3); //obstacle objects
+        int a = 3;
         Instantiate(obstaclePrefabs[n], spawnPoint.position, Quaternion.identity, transform);
+        Instantiate(obstaclePrefabs[a], donutSpawnPoint.position, Quaternion.identity, transform);
         
     }
 
