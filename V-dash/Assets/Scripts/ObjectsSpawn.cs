@@ -31,8 +31,9 @@ public class ObjectsSpawn : MonoBehaviour
 
         //Spawn the obstacle at the postion
 
-        int n = Random.Range(0, 3); //obstacle objects
+        int n = Random.Range(0, 4); //obstacle objects
         Instantiate(obstaclePrefabs[n], spawnPoint.position, Quaternion.identity, transform);
+        
     }
 
 
@@ -44,13 +45,13 @@ public class ObjectsSpawn : MonoBehaviour
         int coinToSpawn = 2;
         //Vector3 position = firstPostion;
         while (true) { 
-        yield return new WaitForSeconds(8f);
+        yield return new WaitForSeconds(5f);
         for (int i = 0; i< coinToSpawn; i++) { 
         int coinSpawnIndex = Random.Range(4, 15);
         Transform coinSpawnPoint = transform.GetChild(coinSpawnIndex).transform;
             Instantiate(coinPrefab, coinSpawnPoint.position, Quaternion.identity, transform);
             //position.z += gap;
-            Debug.Log(i);
+            //Debug.Log(i);
             }
         }
 
