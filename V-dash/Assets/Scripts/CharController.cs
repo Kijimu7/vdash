@@ -18,7 +18,7 @@ public class CharController : MonoBehaviour
     public float laneDistance;
     public GameObject gameObjectToActivate;
     UImenuInGame uImenuInGame;
-    private float spawnDistance = 1.5f;
+    private float spawnDistance = 0.8f; //Distance main menu UI from player
     public Transform head;
 
 
@@ -91,7 +91,7 @@ public class CharController : MonoBehaviour
     public void Die()
     {
         gameObjectToActivate.SetActive(true);
-        gameObjectToActivate.transform.position = head.position + new Vector3(head.forward.x, 0.3f, head.forward.z).normalized * spawnDistance;
+        gameObjectToActivate.transform.position = head.position + new Vector3(head.forward.x, 0.3f, head.forward.z).normalized * spawnDistance; //Main Menu poping up
         alive = false;
         cc.enabled = false;             
 
