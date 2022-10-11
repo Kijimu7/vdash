@@ -1,0 +1,11 @@
+Model Information:
+* title:	Smiling Ice Cream
+* source:	https://sketchfab.com/3d-models/smiling-ice-cream-d891f8d6e46848028219b81dc3d852f5
+* author:	Rude Randal (https://sketchfab.com/Rude_Randal)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Smiling Ice Cream" (https://sketchfab.com/3d-models/smiling-ice-cream-d891f8d6e46848028219b81dc3d852f5) by Rude Randal (https://sketchfab.com/Rude_Randal) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

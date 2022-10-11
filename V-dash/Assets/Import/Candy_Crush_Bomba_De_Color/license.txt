@@ -1,0 +1,11 @@
+Model Information:
+* title:	Candy Crush Bomba De Color
+* source:	https://sketchfab.com/3d-models/candy-crush-bomba-de-color-b00f152ba26f4adaaf7860bfb7bf36f7
+* author:	alexvladimircm (https://sketchfab.com/alexvladimircm)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Candy Crush Bomba De Color" (https://sketchfab.com/3d-models/candy-crush-bomba-de-color-b00f152ba26f4adaaf7860bfb7bf36f7) by alexvladimircm (https://sketchfab.com/alexvladimircm) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
