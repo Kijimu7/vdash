@@ -10,6 +10,7 @@ public class Rolling : MonoBehaviour
     public int length = 6;
     public float travelDistance;
     private Transform attacher;
+    
     Vector3 startPosition;
    
 

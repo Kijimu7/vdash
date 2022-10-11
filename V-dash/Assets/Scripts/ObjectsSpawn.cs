@@ -8,6 +8,7 @@ public class ObjectsSpawn : MonoBehaviour
     public List<GameObject> obstaclePrefabs;
     [SerializeField] GameObject coinPrefab;
     [SerializeField] GameObject candyBallPrefab;
+  
 
     //[SerializeField] GameObject donutPrefab;
     public float gap = 2;
@@ -37,8 +38,12 @@ public class ObjectsSpawn : MonoBehaviour
             //donut = transform.FindChild("DonutMiddle");
             int n = Random.Range(0, 3); //obstacle objects
             Instantiate(obstaclePrefabs[n], spawnPoint.position, Quaternion.identity, transform);
+            if(candyBallPrefab != null)
+        {
             Instantiate(candyBallPrefab, candySpawnPoint.position, Quaternion.identity, transform);
-           // Debug.Log("donut " + donutPrefab);
+            // Debug.Log("donut " + donutPrefab);
+        }
+        
                    
     }
 
