@@ -7,10 +7,11 @@ public class ObjectsSpawn : MonoBehaviour
     //public GameObject obstaclePrefab;
     public List<GameObject> obstaclePrefabs;
     [SerializeField] GameObject coinPrefab;
+    [SerializeField] GameObject candyBallPrefab;
+
     //[SerializeField] GameObject donutPrefab;
-    public Vector3 firstPostion;
     public float gap = 2;
-    private Transform donut;
+  
 
     private void Start()
     {
@@ -28,15 +29,15 @@ public class ObjectsSpawn : MonoBehaviour
        
              // Choose a random point to spawn the obstacle
             int obstacleSpawnIndex = Random.Range(0, 3);
-            //int donutSpawnIndex = 19;
+            int candyBallSpawnIndex = 2;
             Transform spawnPoint = transform.GetChild(obstacleSpawnIndex).transform;// get ObstacleSpawn left, middle right component transform
-                                                                                    //Transform donutSpawnPoint = transform.GetChild(donutSpawnIndex).transform; 
+            Transform candySpawnPoint = transform.GetChild(candyBallSpawnIndex).transform; 
 
             //Spawn the obstacle at the postion
             //donut = transform.FindChild("DonutMiddle");
             int n = Random.Range(0, 3); //obstacle objects
             Instantiate(obstaclePrefabs[n], spawnPoint.position, Quaternion.identity, transform);
-           // Instantiate(donutPrefab, donut.position, donut.transform.rotation);
+            Instantiate(candyBallPrefab, candySpawnPoint.position, Quaternion.identity, transform);
            // Debug.Log("donut " + donutPrefab);
                    
     }
