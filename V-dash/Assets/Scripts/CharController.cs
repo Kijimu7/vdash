@@ -20,11 +20,16 @@ public class CharController : MonoBehaviour
     UImenuInGame uImenuInGame;
     private float spawnDistance = 0.8f; //Distance main menu UI from player
     public Transform head;
+    public static CharController instance;
 
 
     private void Awake()
     {
         cc = GetComponent<CharacterController>();
+        if(instance == null)
+        {
+            instance = this;
+        }
 
     }
 

@@ -29,8 +29,8 @@ public class ObjectsSpawn : MonoBehaviour
     {
        
              // Choose a random point to spawn the obstacle
-            int obstacleSpawnIndex = Random.Range(0, 3);
-            int candyBallSpawnIndex = 2;
+            int obstacleSpawnIndex = Random.Range(1, 4);
+            int candyBallSpawnIndex = 3;
             Transform spawnPoint = transform.GetChild(obstacleSpawnIndex).transform;// get ObstacleSpawn left, middle right component transform
             Transform candySpawnPoint = transform.GetChild(candyBallSpawnIndex).transform; 
 
