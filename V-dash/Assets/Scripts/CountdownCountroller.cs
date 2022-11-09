@@ -6,38 +6,76 @@ public class CountdownCountroller : MonoBehaviour
 {
     public int countdownTime;
     public Text countdownDisplay;
+    public Canvas canvasObject;
+    bool GameStarted = false;
+    public Button StartButton;
+    CharacterController cc;
+    Vector3 direction;
+    [SerializeField] private float forwardSpeed;
+
+
+
+
+    public void startGame()
+    {
+
+        if (!GameStarted)
+        {
+            StartCoroutine(CountdownToStart());
+        }
+    }
 
     private void Start()
     {
-        StartCoroutine(CountdownToStart());
+        StartButton.onClick.AddListener(startGame);
+        //Time.timeScale = 0;
+
+        cc = GetComponent<CharacterController>();
+        //StartCoroutine(CountdownToStart());
+        
+   
+
     }
+    
+    private void Update()
+    {
+        if (GameStarted) return;
+        direction.z = forwardSpeed;
+        if (cc.enabled == true)
+        {
+            cc.Move(direction * Time.deltaTime);
+        }
+
+    }
+
     IEnumerator CountdownToStart()
     {
 
-        Time.timeScale = 0;
+     
         while (countdownTime > 0)
         {
-
+           
             countdownDisplay.text = countdownTime.ToString();
 
             yield return new WaitForSecondsRealtime(1f);
             countdownTime--;
         }
-        Time.timeScale = 1;
         countdownDisplay.text = "GOOO!";
-        
+      
+        yield return new WaitForSeconds(1f);
+        cc.enabled = true;
 
-       
+    
+
+
+
         //yield return new WaitForSecondsRealtime(1f);
-        
+
         //CharController.instance.Reset();
         //yield return new WaitForSeconds(1f);
 
-        //countdownDisplay.gameObject.SetActive(false);
+        canvasObject.gameObject.SetActive(false);
+       
     }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }

@@ -21,6 +21,7 @@ public class CharController : MonoBehaviour
     private float spawnDistance = 0.8f; //Distance main menu UI from player
     public Transform head;
     public static CharController instance;
+    public bool disabled = false;
 
 
     private void Awake()
@@ -33,7 +34,7 @@ public class CharController : MonoBehaviour
 
     }
 
-    void Update()
+    public void Move()
     {
         if (cc.enabled == true) { 
             direction.z = forwardSpeed; //set to move z direction
