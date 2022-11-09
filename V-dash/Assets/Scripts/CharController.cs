@@ -22,6 +22,9 @@ public class CharController : MonoBehaviour
     public Transform head;
     public static CharController instance;
     public bool disabled = false;
+    public Leaderboard leaderboard;
+    private GameManager gameManager;
+    public int score;
 
 
     private void Awake()
@@ -32,6 +35,11 @@ public class CharController : MonoBehaviour
             instance = this;
         }
 
+    }
+
+     void Start()
+    {
+        gameManager = GetComponent<GameManager>();
     }
 
     public void Move()
@@ -85,7 +93,7 @@ public class CharController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Obstacle"))
         {
-            Die();
+            StartCoroutine(Die());
         }
     }
 
@@ -94,12 +102,14 @@ public class CharController : MonoBehaviour
         //Restart the game
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-    public void Die()
+    public IEnumerator Die()
+
     {
         gameObjectToActivate.SetActive(true);
         gameObjectToActivate.transform.position = head.position + new Vector3(head.forward.x, 0.3f, head.forward.z).normalized * spawnDistance; //Main Menu poping up
         alive = false;
-        cc.enabled = false;             
+        cc.enabled = false;
+        yield return leaderboard.SubmitScoreRoutine(gameManager.score);
 
     }
     private void OnTriggerEnter(Collider other)
