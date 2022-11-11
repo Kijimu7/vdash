@@ -7,10 +7,7 @@ public class Leaderboard : MonoBehaviour
 {
     int leaderboardID = 8714;
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+ 
 
    public IEnumerator SubmitScoreRoutine(int scoreToUpload)
     {

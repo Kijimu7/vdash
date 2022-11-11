@@ -19,12 +19,12 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-       
+        scoreText.text = "x " + score.ToString();
     }
 
     private void Awake()
     {
         inst = this;
-        scoreText.text = "x " + score.ToString();
+       
     }
 }
