@@ -23,8 +23,8 @@ public class CharController : MonoBehaviour
     public static CharController instance;
     public bool disabled = false;
     public Leaderboard leaderboard;
-    private GameManager gameManager;
-    public int score;
+    public Coin coin;
+    private static int instScore;
 
 
     private void Awake()
@@ -39,8 +39,15 @@ public class CharController : MonoBehaviour
 
      void Start()
     {
-        gameManager = GetComponent<GameManager>();
+        //coin = GetComponent<Coin>();
+       
     }
+
+    private void Update()
+    {       
+            instScore = Coin.coinScore;
+        
+   }
 
     public void Move()
     {
@@ -109,7 +116,8 @@ public class CharController : MonoBehaviour
         gameObjectToActivate.transform.position = head.position + new Vector3(head.forward.x, 0.3f, head.forward.z).normalized * spawnDistance; //Main Menu poping up
         alive = false;
         cc.enabled = false;
-        yield return leaderboard.SubmitScoreRoutine(gameManager.score);
+        yield return leaderboard.SubmitScoreRoutine(instScore);
+
 
     }
     private void OnTriggerEnter(Collider other)

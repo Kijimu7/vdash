@@ -7,6 +7,15 @@ public class Coin : MonoBehaviour
 {
     public float turnSpeed = 90f;
     public AudioClip coinSound;
+    public static int coinScore;
+    public static Coin instanciateCoin;
+
+
+    private void Awake()
+    {
+        instanciateCoin = this;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Coin"))
@@ -27,7 +36,7 @@ public class Coin : MonoBehaviour
 
         
         // Add to the player's score
-        GameManager.inst.IncrementScore();
+        coinScore = GameManager.inst.score += 10;
 
         AudioSource.PlayClipAtPoint(coinSound, transform.position, 0.5f);
         // Desroy this coin object

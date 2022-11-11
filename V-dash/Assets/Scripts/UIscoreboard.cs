@@ -11,10 +11,7 @@ public class UIscoreboard : MonoBehaviour
     public Transform head;
     private float spawnDistance = 8f;
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+  
 
     // Update is called once per frame
     void Update()
